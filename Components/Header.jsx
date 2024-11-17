@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export default function Header() {
     return (
@@ -11,4 +11,4 @@ export default function Header() {
             <h4 className="header--project">React Course - Project 3</h4>
         </header>
     )
-}
+};

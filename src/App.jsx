@@ -1,6 +1,6 @@
-import React from "react"
-import Header from "./Components/Header.js"
-import Meme from "./Components/Meme.js"
+import React from "react";
+import Header from "../Components/Header.jsx";
+import Meme from "../Components/Meme.jsx";
 
 
 function App() {
@@ -11,6 +11,6 @@ function App() {
       <Meme />
     </div>
 )
-}
+};
 
-export default App
+export default App;

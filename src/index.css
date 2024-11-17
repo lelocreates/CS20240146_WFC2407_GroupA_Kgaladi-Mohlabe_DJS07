@@ -61,11 +61,14 @@ main {
 
 .meme {
   position: relative;
+  
 }
 
 .meme--image {
   max-width: 100%;
   border-radius: 3px;
+  display: block;
+  margin: 0 auto;
 }
 
 .meme--text {
@@ -91,6 +94,7 @@ main {
       0 -2px 0 #000,
       -2px 0 0 #000,
       2px 2px 5px #000;
+  z-index: 1;
 }
 
 .bottom {
