@@ -19,8 +19,8 @@ export default function Meme() {
     }, [])
 
     function getMemeImage() {
-        const memesArray = allMemes.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
+        //const memesArray = allMemes.data.memes
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
         const url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
@@ -40,43 +40,39 @@ export default function Meme() {
 
     return (
         <main>
-            <form className="form">
-            <div>
-                    <label>Top Text
-                        <input
-                            type="text"
-                            placeholder="Shut up"
-                            className="form--input"
-                            name="topText"
-                            value={meme.topText}
-                            onChange={handleChange}
-                />
-                    </label>
-                </div>
-                <div>
-                    <label>Bottom Text
+            <div className="form">
+                <label>Top Text
                     <input
-                            type="text"
-                            placeholder="and take my money"
-                            className="form--input"
-                            name="bottomText"
-                            value={meme.bottomText}
-                            onChange={handleChange}
-                        />
-                    </label>
-                </div>
+                        type="text"
+                        placeholder="Shut up"
+                        className="form--input"
+                        name="topText"
+                        value={meme.topText}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>Bottom Text
+                    <input
+                        type="text"
+                        placeholder="and take my money"
+                        className="form--input"
+                        name="bottomText"
+                        value={meme.bottomText}
+                        onChange={handleChange}
+                    />
+                </label>
+            
                 <button
                     className="form--button"
                     onClick={getMemeImage}
                 >
                     Get a new meme image 🖼
                 </button>
-                
-            </form>
+            </div>    
             <div className="meme">
                 <img src={meme.randomImage} className="meme--image" />
-                <h2 className="meme--text top">One does not simply</h2>
-                <h2 className="meme--text bottom">Walk into Mordor</h2>
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
         </main>
     )
